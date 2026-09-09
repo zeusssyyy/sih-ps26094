@@ -1,0 +1,7 @@
+**/.venv/
+**/node_modules/
+**/__pycache__/
+**/dist/
+*.pyc
+.env
+# NOTE: do NOT ignore services/risk-engine/artifacts/ — Avik's compose mounts it

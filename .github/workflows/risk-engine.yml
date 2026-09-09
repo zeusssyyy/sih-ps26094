@@ -1,0 +1,14 @@
+name: risk-engine-ci
+on:
+  push: { paths: ["services/risk-engine/**"] }
+  pull_request: { paths: ["services/risk-engine/**"] }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: services/risk-engine } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements-dev.txt
+      - run: pytest -q
